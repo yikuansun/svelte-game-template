@@ -8,29 +8,41 @@
         height: 70,
         x: 100,
         y: 100,
+        velocityX: 0,
+        velocityY: 0,
+        grounded: false,
     }
 
     let keyInputs = {};
 
     function tick() {
-        if (keyInputs["ArrowUp"]) {
-            player.y -= 4;
-        }
-        if (keyInputs["ArrowDown"]) {
-            player.y += 4;
+        if (keyInputs["ArrowUp"] && player.grounded) {
+            player.velocityY = -20;
         }
         if (keyInputs["ArrowLeft"]) {
-            player.x -= 4;
+            player.x -= 5;
         }
         if (keyInputs["ArrowRight"]) {
-            player.x += 4;
+            player.x += 5;
         }
 
-        // bounds
-        if (player.x < 0) player.x = 0;
-        else if (player.x > gameWidth - player.width) player.x = gameWidth - player.width;
-        if (player.y < 0) player.y = 0;
-        else if (player.y > gameHeight - player.height) player.y = gameHeight - player.height;
+        // gravity
+        player.velocityY += 1;
+
+        // collision
+        if (player.x < 0) {
+            player.x = 0;
+            player.velocityX = 0;
+        }
+        if (player.y > gameHeight - player.height) {
+            player.y = gameHeight - player.height;
+            player.velocityY = 0;
+            player.grounded = true;
+        }
+        else player.grounded = false;
+
+        player.y += player.velocityY;
+        player.x += player.velocityX;
 
         requestAnimationFrame(tick);
     }
