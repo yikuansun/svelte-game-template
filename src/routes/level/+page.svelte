@@ -2,6 +2,9 @@
     import { onMount, onDestroy } from "svelte";
     import { goto } from "$app/navigation";
 
+    // helper functions
+    import Collision from "$lib/helpers/Collision";
+
     // default parameters passed into the slot from +layout.svelte
     export let screenWidth = 960;
     export let screenHeight = 540;
