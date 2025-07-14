@@ -10,6 +10,7 @@
     export let screenHeight = 540;
 
     onMount(() => {
+        // called when the component is mounted
         console.log(`screenWidth: ${screenWidth}, screenHeight: ${screenHeight}`);
     });
 </script>
