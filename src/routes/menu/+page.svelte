@@ -18,7 +18,7 @@
 <foreignObject width="100%" height="100%">
     <div style:display="flex" style:flex-direction="column" style:align-items="center" style:justify-content="center"
         style:width="100%" style:height="100%">
-        <img src={logoImage} alt="Svelte" style:width="300px" style:height="auto" />
+        <img src={logoImage} alt="Svelte" style:width="300px" style:height="auto" draggable="false" />
         <br />
         <button on:click={() => {
             goto("../level");
