@@ -29,3 +29,5 @@ Make awesome games easily using Svelte and SVG.
 ## Compiling
 
 To compile the game, run `npm run build`.
+
+# If you made a project using this template, feel very free to share it [here](https://github.com/yikuansun/svelte-game-template/issues/1)!
